@@ -1,0 +1,128 @@
+@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@200&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  font-family: Spartan;
+}
+
+:root {
+  /*
+/*### Primary*/
+
+  --Dark-cyan: hsl(180, 29%, 50%);
+
+  /*### Neutral*/
+
+  --Background: hsl(180, 52%, 96%);
+  --Light-cyan: hsl(180, 31%, 95%);
+  --Dark-G-cyan: hsl(180, 8%, 52%);
+  --Very-Dark-Cyan: hsl(180, 14%, 20%);
+}
+
+body {
+  font-size: 15px;
+  background-color: var(--Background);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+button {
+  color: var(--Dark-cyan);
+
+  background-color: var(--Light-cyan);
+  border-color: transparent;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 5px;
+  font-weight: bold;
+}
+.header {
+  background-color: var(--Dark-cyan);
+}
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+}
+
+.Card-style {
+  background-color: white;
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  height: 100px;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px var(--Dark-cyan);
+}
+.skills button {
+  justify-content: right;
+}
+.pop {
+  height: 100px;
+  position: relative;
+  width: 80%;
+  display: none;
+}
+h6 {
+  font-weight: bold;
+}
+h6:first-child {
+  color: var(--Dark-cyan);
+}
+.main {
+  display: flex;
+
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  height: 90px;
+}
+.main img {
+  margin-right: 10px;
+}
+.info {
+  height: 90px;
+  /*! justify-content: center; */
+  margin: 10px;
+  justify-content: center;
+}
+.info > * {
+  margin: 5px;
+}
+.info span {
+  font-size: 12px;
+}
+.title {
+  display: flex;
+}
+.title h6:nth-child(2) {
+  margin-left: 5px;
+  background-color: var(--Dark-cyan);
+  color: white;
+  border-radius: 5px;
+  padding: 2px;
+}
+.title h6:nth-child(3) {
+  margin-left: 5px;
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+  padding: 2px;
+  margin-left: 5px;
+}
+.tags button::after {
+  content: "X";
+  margin-left: 5px;
+  background-color: var(--Dark-cyan);
+  padding: 10px;
+  height: 100%;
+  padding-right: 10px;
+  margin-right: -10px;
+  color: white;
+  border-radius: 0px 5px 5px 0px;
+}
