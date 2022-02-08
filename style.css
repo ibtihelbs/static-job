@@ -76,7 +76,6 @@ h6:first-child {
 }
 .main {
   display: flex;
-
   align-content: center;
   justify-content: center;
   align-items: center;
@@ -125,4 +124,39 @@ h6:first-child {
   margin-right: -10px;
   color: white;
   border-radius: 0px 5px 5px 0px;
+}
+@media (max-width: 800px) {
+  body {
+    font-size: 13px;
+  }
+  .Card-style {
+    flex-direction: column;
+    height: auto;
+    position: relative;
+    justify-content: left;
+    margin: 1rem;
+  }
+  .main {
+    flex-direction: column !important;
+    height: auto;
+    border-bottom: 1px #f2eeee solid;
+  }
+  .main img {
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    top: -20px;
+    left: 20px;
+  }
+  .info {
+    width: 100%;
+    padding: 1rem;
+    height: auto;
+  }
+  .skills {
+    padding: 1rem;
+  }
+  button {
+    font-size: 10px;
+  }
 }
