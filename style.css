@@ -40,6 +40,7 @@ button {
 }
 .header {
   background-color: var(--Dark-cyan);
+  width: 100%;
 }
 main {
   display: flex;
@@ -129,6 +130,9 @@ h6:first-child {
 @media (max-width: 800px) {
   body {
     font-size: 13px;
+  }
+  .main{
+    width: 98%;
   }
   .Card-style {
     flex-direction: column;

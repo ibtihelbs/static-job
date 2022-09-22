@@ -90,7 +90,7 @@ async function Data (){
       let x =event.target.innerHTML;
       let y =event.target;
        y.remove();
-      
+      console.log(x,y)
        let _filter=tags.innerHTML.replaceAll("</button>","");
           _filter=_filter.replaceAll("<button>",",");
           _filter=_filter.split(",");
@@ -100,14 +100,12 @@ async function Data (){
       
         if(item.innerHTML.includes(x)==false && _sub_filter(_filter,item)==true){
             item.style.display = "flex"; 
-            
        }
       })
     })
     console.log(filteredByTags, 'this is filtered by tag');
     document.querySelector("#clear").addEventListener("click", (event)=>{
       data.map((data)=>{
-        
         main.innerHTML +=_html(data);
         document.querySelector(".pop").style.display = "none";
       });
