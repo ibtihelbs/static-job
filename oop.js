@@ -4,11 +4,10 @@ let filteredByTags = [];
 main = document.querySelector("main");
 
   let _sub_filter =(tab,ht)=>{
+    console.log(tab,'tab',ht,'ht')
     let init=0;
     for (i in tab){
       if(ht.innerHTML.includes(tab[i])==true){
-        /**console.log(true +"hihii"+ tab.length);
-        return true; */
         init++;
     }
   }
@@ -56,27 +55,21 @@ main = document.querySelector("main");
 async function Data (){
 
    const res = await fetch('data.json');
-
    const data = await res.json();
-
    data.map((data)=>{
-     
      main.innerHTML +=_html(data);
    });
    let card= document.querySelectorAll(".Card");
    let tag = document.querySelectorAll(".skills button");
-   let tags=document.querySelector(".tags");
-    
+   let tags=document.querySelector(".tags")
     tag.forEach((item)=>{
       item.addEventListener("click", (event)=>{
         document.querySelector(".pop").style.display = "flex";
-        let x =event.target.innerHTML;
+        console.log('clicked')
+        let x = event.target.innerHTML;
         if(!filteredByTags.includes(x)){ 
           filteredByTags.push(x) 
           tags.innerHTML += `<button>${x}</button>`
-        }
-        else{
-          return;
         }
         card.forEach((item)=>{
           if(item.innerHTML.includes(x)==false){
@@ -88,26 +81,22 @@ async function Data (){
     })
     tags.addEventListener("click", (event)=>{
       let x =event.target.innerHTML;
-      let y =event.target;
-       y.remove();
-      console.log(x,y)
-       let _filter=tags.innerHTML.replaceAll("</button>","");
-          _filter=_filter.replaceAll("<button>",",");
-          _filter=_filter.split(",");
-          _filter.shift();
-      card.forEach((item)=>{
-        console.log(item.innerHTML);
-      
-        if(item.innerHTML.includes(x)==false && _sub_filter(_filter,item)==true){
+       let _filter=tags.innerHTML.replace(`<button>${x}</button>`,"");
+       tags.innerHTML = _filter;
+       _filter == '' ? document.querySelector(".pop").style.display = "none": null
+       console.log(card)
+       card.forEach((item)=>{
+        if(item.innerHTML.includes(x) == false && _sub_filter(_filter,item)==true){
             item.style.display = "flex"; 
        }
       })
     })
-    console.log(filteredByTags, 'this is filtered by tag');
     document.querySelector("#clear").addEventListener("click", (event)=>{
       data.map((data)=>{
-        main.innerHTML +=_html(data);
+        //main.innerHTML +=_html(data);
         document.querySelector(".pop").style.display = "none";
+        card.forEach((c)=>c.style.display = 'flex');
+        tags.innerHTML = '';
       });
     })
     
